@@ -911,3 +911,122 @@ class Car(Vehicle):
 c = Car("Ford Mustang", "red", "GT350")
 print(c.getDescription())
 print(c.getName())  # car has no method getName() but it is accessible through class Vehicle
+
+
+#53.A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99.
+
+#Find the largest palindrome made from the product of two 3-digit numbers.
+
+i = 100
+product = 0
+palin_list = []
+
+def reverse(n):
+    Reverse = 0
+    while(n > 0):
+        Reminder = n % 10
+        Reverse = (Reverse *10) + Reminder
+        n = n //10
+    return Reverse
+
+
+for i in range(100,1000):
+    for j in range(100,1000):
+        #print('i,j:\n',i,j)
+        product = i*j
+        get = reverse(product)
+
+        if product == get:
+            print('i,j:\n', i, j)
+            palin_list.append(product)
+
+        product = 0
+        get =0
+
+print(max(palin_list))
+
+
+#54.2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder.
+
+#What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+
+list = []
+small_no = 0
+i = 1
+rem = 0
+
+for i in range(1,300000000):
+    for j in range(1,20):
+       rem = i%j
+       small_no += rem
+    if small_no == 0:
+        #print('%d is divisible by all elements in i' % (i))
+        list.append(i)
+
+    else:
+        print(i)
+        small_no = 0    #Reset Small_no variable
+        #print('%d is not divisible by all elements in i'%(i))
+
+print(list)
+
+
+#55.The sum of the squares of the first ten natural numbers is,12 + 22 + ... + 102 = 385
+#The square of the sum of the first ten natural numbers is,(1 + 2 + ... + 10)2 = 552 = 3025
+#Hence the difference between the sum of the squares of the first ten natural numbers and the square of the sum is 3025 − 385 = 2640.
+#Find the difference between the sum of the squares of the first one hundred natural numbers and the square of the sum.
+
+i=1
+
+#Function to find sumofsquare
+def sumofsquare(n):
+    fsum = 0
+    for i in range(1,n+1):
+        fsum += i
+        #print(fsum)
+    return (fsum*fsum)
+
+#Function to find Squareofsum
+def squareofsum(n):
+    ssum = 0
+    for i in range(1,n+1):
+        ssum += (i*i)
+    return ssum
+
+#Function to find difference between sumofsquare And Squareofsum
+def diff_of_sofsqu_and_squofsum(n1,n2):
+
+    #n1 = sumofsquare answer
+    #n2 = squareofsum answer
+
+    return (n1-n2)
+
+g1 = sumofsquare(100)
+g2 = squareofsum(100)
+print(diff_of_sofsqu_and_squofsum(g1,g2))
+
+
+#56.By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+#What is the 10 001st prime number?
+
+def getprimes(x):
+    primes = []
+    # Loop through 9999 possible prime numbers
+    for i in range(2, 200000):
+
+        for j in range(2, i):
+
+            if i % j == 0:
+                break
+
+        else:
+
+            primes.append(i)
+
+        if len(primes) == x:
+            print('size of list :',len(primes))
+            return primes
+
+print('Elements in list :\n',getprimes(100))
+
+
