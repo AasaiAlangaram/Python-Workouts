@@ -1030,3 +1030,4 @@ def getprimes(x):
 print('Elements in list :\n',getprimes(100))
 
 
+print('Hi Im Praveen')
