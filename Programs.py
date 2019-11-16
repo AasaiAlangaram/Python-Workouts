@@ -1030,4 +1030,48 @@ def getprimes(x):
 print('Elements in list :\n',getprimes(100))
 
 
-print('Hi Im Praveen')
+#57.Define a class with a generator which can iterate the numbers, which are divisible by 7, between a given range 0 and n
+
+#Solution
+
+class nodivby7:
+    def check(self,n):
+        l = []
+        for i in range(n):
+           if i%7 == 0:
+                l.append(i)
+        return l
+    #using list comprehension
+    #    return [i for i in range(n) if i%7 == 0]
+
+num = int(input("Enter the range:"))
+find = nodivby7()
+print(find.check(num))
+print('The number of elements that are divisible by 7 withn {n} : {ans}'.format(n=num,ans=len(find.check(num))))
+
+
+
+#58.Write a program to compute the frequency of the words from the input.
+
+from collections import Counter
+
+ss = 'New to Python or choosing between Python 2 and Python 3? Read Python 2 or Python 3.'.split()
+# counter function simply counts the items count return as dictionary
+ss = Counter(ss)         # returns key & frequency as a dictionary
+print(ss)
+# sorting the items in dictionary
+ss = sorted(ss.items())  # returns as a tuple list
+print(ss)
+
+for i in ss:
+    print("%s:%d"%(i[0],i[1]))
+
+
+
+#59.Write a method which can calculate square value of number
+
+def square(num):
+    return (num*num)
+
+no = int(input('enter the number to square:'))
+print('the square of the number is',square(no))
