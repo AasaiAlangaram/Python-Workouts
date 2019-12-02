@@ -1075,3 +1075,32 @@ def square(num):
 
 no = int(input('enter the number to square:'))
 print('the square of the number is',square(no))
+
+
+# 60. You are required to write a program to sort the (name, age, score) tuples by ascending order where name is string, age and score are numbers. The tuples are input by console. The sort criteria is:
+
+# 1: Sort based on name
+# 2: Then sort based on age
+# 3: Then sort by score
+# The priority is that name > age > score.
+
+from operator import itemgetter
+
+# Get Input Value from console 
+
+# while True:
+#     var = input('Enter the name,age,score:\n')
+#     var = var.split(' ') # split by space
+#     if not var[0]:
+#         break
+#     lst.append(tuple(var))
+
+lst = [('Tom','19','80'),('John','20','90'),('Jony','17','91'),('Jony','17','93'),('Json','21','85')]
+
+# https://docs.python.org/3/library/functions.html#sorted
+# https://docs.python.org/3/howto/sorting.html
+
+Ascending_ordered = sorted(lst, key=itemgetter(0,1,2),reverse = False)
+print('Ascending_ordered :',Ascending_ordered)
+Descending_ordered = sorted(lst, key=itemgetter(0,1,2),reverse = True)
+print('Descending_ordered :',Descending_ordered)
