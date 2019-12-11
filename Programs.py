@@ -1131,3 +1131,28 @@ Ascending_ordered = sorted(lst, key=itemgetter(0,1,2),reverse = False)
 print('Ascending_ordered :',Ascending_ordered)
 Descending_ordered = sorted(lst, key=itemgetter(0,1,2),reverse = True)
 print('Descending_ordered :',Descending_ordered)
+
+#61.Define a function which can print a dictionary where the keys are numbers between 1 and 20 (both included) and the values are square of keys.
+
+#Solution
+
+def dictfunc():
+    d = dict()
+    for i in range(1,21):
+        d[i] = i**2
+    return d
+
+print('The Dictionary is:',dictfunc())
+
+#62.Define a function which can generate a dictionary where the keys are numbers between 1 and 20 (both included) and the values are square of keys.
+# The function should just print the keys only.
+
+#Solution
+
+def dictfunc():
+    d = dict()
+    for i in range(1,21):
+        d[i] = i**2
+    return d.keys()
+
+print('The Key:',dictfunc())
