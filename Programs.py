@@ -19,6 +19,31 @@ print("Sys version info:",sys.version_info)
 print("Sys version info:major:",sys.version_info[0])#specify index to get specific value
 print("python.version:",sys.version)#sys.version get the version of python using
 
+#61.Define a function which can print a dictionary where the keys are numbers between 1 and 20 (both included) and the values are square of keys.
+
+#Solution
+
+def dictfunc():
+    d = dict()
+    for i in range(1,21):
+        d[i] = i**2
+    return d
+
+print('The Dictionary is:',dictfunc())
+
+#62.Define a function which can generate a dictionary where the keys are numbers between 1 and 20 (both included) and the values are square of keys.
+# The function should just print the keys only.
+
+#Solution
+
+def dictfunc():
+    d = dict()
+    for i in range(1,21):
+        d[i] = i**2
+    return d.keys()
+
+print('The Key:',dictfunc())
+
 
 #3.write a python code to print current date and time
 
