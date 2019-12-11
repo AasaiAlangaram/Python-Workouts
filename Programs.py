@@ -1156,3 +1156,19 @@ def dictfunc():
     return d.keys()
 
 print('The Key:',dictfunc())
+
+#63.Define a function which can generate and print a list where the values are square of numbers between 1 and 20 (both included).
+
+#Solution
+
+def listfunction():
+    l = []
+    for i in range(1, 21):
+        l.append(i**2)
+    return l
+
+result = listfunction()
+print('The Expected list is:', listfunction())
+
+for k in range(0,20):
+    print('The value at index {index} is {value}\n'.format(index = k,value = result[k]))
