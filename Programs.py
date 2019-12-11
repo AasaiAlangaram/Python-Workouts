@@ -1172,3 +1172,37 @@ print('The Expected list is:', listfunction())
 
 for k in range(0,20):
     print('The value at index {index} is {value}\n'.format(index = k,value = result[k]))
+
+#64.Define a function which can generate a list where the values are square of numbers between 1 and 20 (both included).
+# Then the function needs to print the first 5 elements in the list.
+
+#Solution
+
+def listfunction():
+
+    l =[]
+    for i in range(1,21):
+        l.append(i**2)
+
+    print('The list is :',l)
+
+    print('The First Five elements are :',l[:5])
+
+listfunction()
+
+#64.Define a function which can generate a list where the values are square of numbers between 1 and 20 (both included).
+# Then the function needs to print the last 5 elements in the list.
+
+#Solution
+
+def listfunction():
+
+    l =[]
+    for i in range(1,21):
+        l.append(i**2)
+
+    print('The list is :',l)
+
+    print('The Last Five elements are :',l[-6:])
+
+listfunction()
