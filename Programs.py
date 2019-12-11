@@ -1,4 +1,4 @@
-
+"""
 #1.Write a program to print the following string
 #'Hi
 #   I am your friend
@@ -1057,6 +1057,31 @@ def getprimes(x):
 print('Elements in list :\n',getprimes(100))
 
 
+from operator import itemgetter
+
+# Get Input Value from console
+
+# while True:
+#     var = input('Enter the name,age,score:\n')
+#     var = var.split(' ') # split by space
+#     if not var[0]:
+#         break
+#     lst.append(tuple(var))
+
+lst = [('Tom','19','80'),('John','20','90'),('Jony','17','91'),('Jony','17','93'),('Json','21','85')]
+
+# https://docs.python.org/3/library/functions.html#sorted
+# https://docs.python.org/3/howto/sorting.html
+
+Ascending_ordered = sorted(lst, key=itemgetter(0,1,2),reverse = False)
+print('Ascending_ordered :',Ascending_ordered)
+Descending_ordered = sorted(lst, key=itemgetter(0,1,2),reverse = True)
+print('Descending_ordered :',Descending_ordered)
+
+
+
+
+
 #57.Define a class with a generator which can iterate the numbers, which are divisible by 7, between a given range 0 and n
 
 #Solution
@@ -1206,3 +1231,16 @@ def listfunction():
     print('The Last Five elements are :',l[-6:])
 
 listfunction()
+"""
+
+#65.With a given tuple (1,2,3,4,5,6,7,8,9,10), write a program to print the first half values in one line and the last half values in one line.
+
+#Solution
+
+tp = (1,2,3,4,5,6,7,8,9,10)
+
+print('The Original Tuple:',tp)
+
+splitted = [print('Splitted List :{List}'.format(List = tp[x:x+5])) for x in range(0,len(tp),5)]
+
+
