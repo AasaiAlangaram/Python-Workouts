@@ -1284,3 +1284,11 @@ output = ''.join(list(map(lambda x:x**2,filter(lambda i:i%2==0,input))))
 
 print('The input is:',input)
 print('The output is:',output)
+
+#70.Write a program which can filter() to make a list whose elements are even number between 1 and 20 (both included).
+
+#Solution
+
+evennolist = list(filter(lambda x:x%2==0,range(1,21)))
+
+print('The even no list between 1 to 20 is:',evennolist)
