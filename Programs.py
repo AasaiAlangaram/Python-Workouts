@@ -1253,3 +1253,14 @@ even_tp = ()
 even_tp  = tuple(i for i in tp if i%2==0)
 print("The Original Tuple:",tp)
 print("The Even Tuple :",even_tp)
+
+#67.Write a program which accepts a string as input to print "Yes" if the string is "yes" or "YES" or "Yes", otherwise print "No".
+
+#Solution
+
+input = input('Enter string:')
+
+output = ''.join(['Yes' if input == 'yes' or input =='YES' or input =='Yes' or input =='YeS' else 'No' ])
+
+print(str(output))
+
