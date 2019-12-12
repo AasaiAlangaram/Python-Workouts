@@ -1264,3 +1264,12 @@ output = ''.join(['Yes' if input == 'yes' or input =='YES' or input =='Yes' or i
 
 print(str(output))
 
+#68.Write a program which can map() to make a list whose elements are square of elements in [1,2,3,4,5,6,7,8,9,10].
+
+#Solution
+
+input = [1,2,3,4,5,6,7,8,9,10]
+
+squaredlist = list(map(lambda x:x**2,input))
+print('The Original List is:',input)
+print('The Squared List is:',squaredlist)
