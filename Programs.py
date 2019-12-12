@@ -1273,3 +1273,14 @@ input = [1,2,3,4,5,6,7,8,9,10]
 squaredlist = list(map(lambda x:x**2,input))
 print('The Original List is:',input)
 print('The Squared List is:',squaredlist)
+
+#69.Write a program which can map() and filter() to make a list whose elements are square of even number in [1,2,3,4,5,6,7,8,9,10].
+
+#Solution
+
+input = [1,2,3,4,5,6,7,8,9,10]
+
+output = ''.join(list(map(lambda x:x**2,filter(lambda i:i%2==0,input))))
+
+print('The input is:',input)
+print('The output is:',output)
