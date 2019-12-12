@@ -1,4 +1,4 @@
-"""
+
 #1.Write a program to print the following string
 #'Hi
 #   I am your friend
@@ -1242,7 +1242,6 @@ tp = (1,2,3,4,5,6,7,8,9,10)
 print('The Original Tuple:',tp)
 
 splitted = [print('Splitted List :{List}'.format(List = tp[x:x+5])) for x in range(0,len(tp),5)]
-"""
 
 #66.Write a program to generate and print another tuple whose values are even numbers in the given tuple (1,2,3,4,5,6,7,8,9,10).
 
