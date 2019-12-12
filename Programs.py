@@ -1231,7 +1231,7 @@ def listfunction():
     print('The Last Five elements are :',l[-6:])
 
 listfunction()
-"""
+
 
 #65.With a given tuple (1,2,3,4,5,6,7,8,9,10), write a program to print the first half values in one line and the last half values in one line.
 
@@ -1242,5 +1242,14 @@ tp = (1,2,3,4,5,6,7,8,9,10)
 print('The Original Tuple:',tp)
 
 splitted = [print('Splitted List :{List}'.format(List = tp[x:x+5])) for x in range(0,len(tp),5)]
+"""
 
+#66.Write a program to generate and print another tuple whose values are even numbers in the given tuple (1,2,3,4,5,6,7,8,9,10).
 
+#Solution
+
+tp = (1,2,3,4,5,6,7,8,9,10)
+even_tp = ()
+even_tp  = tuple(i for i in tp if i%2==0)
+print("The Original Tuple:",tp)
+print("The Even Tuple :",even_tp)
