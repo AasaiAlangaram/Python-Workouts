@@ -1,4 +1,4 @@
-
+"""
 #1.Write a program to print the following string
 #'Hi
 #   I am your friend
@@ -1354,3 +1354,87 @@ class Rectangle():
 AreaofRectangle = Rectangle(3,3)
 print("Area of Rectangle:",AreaofRectangle.area())
 
+
+#75. Define a class named Shape and its subclass Square. The Square class has an init function which takes a length as argument.
+#  Both classes have a area function which can print the area of the shape where Shape's area is 0 by default.
+
+#Solution
+
+import operator
+class Shape():
+    def __init__(self):
+        pass
+
+    def area(self):
+        self.Area = 0
+        return self.Area
+
+class Square(Shape):
+    def __init__(self,l):
+        super(Shape, self).__init__()
+        self.Area = l
+    def area(self):
+        return operator.imul(self.Area,self.Area)
+
+SquaredShape = Square(2)
+print(SquaredShape.area())
+
+
+#76.Please raise a RuntimeError exception
+
+#Solution
+
+raise RuntimeError('Some Problem Occured')
+
+
+#77.Write a function to compute 5/0 and use try/except to catch the exceptions
+
+#Solution
+
+def dividebyzero():
+    return 5/0
+
+try:
+    dividebyzero()
+except ZeroDivisionError:
+    print('Zero Division Error')
+finally:
+    print('Other Error Occured')
+
+
+
+#78.Define a custom exception class which takes a string message as attribute.
+
+#Solution
+
+class CustomException(Exception):
+
+    def __init__(self, message):
+        self.message = message
+
+
+num = int(input())
+
+try:
+    if num < 10:
+        raise CustomException("Input is less than 10")
+    elif num > 10:
+        raise CustomException("Input is grater than 10")
+    else:
+        raise CustomException('Input is equal to 10')
+
+except CustomException as ce:
+    print("The error raised: " + ce.message)
+"""
+
+#79.Assuming that we have some email addresses in the "username@companyname.com" format,
+# please write program to print the user name of a given email address. Both user names and company names are composed of letters only.
+
+#Solution
+
+import re
+
+email = "john@google.com"
+pattern = "(\w+)@\w+.com"
+ans = re.findall(pattern,email)
+print(ans)
