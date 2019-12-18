@@ -1291,3 +1291,66 @@ print('The output is:',output)
 evennolist = list(filter(lambda x:x%2==0,range(1,21)))
 
 print('The even no list between 1 to 20 is:',evennolist)
+
+#71.Define a class named American which has a static method called printNationality.
+
+#Solution
+
+class American():
+    @staticmethod
+    def printNationality():
+        print("I am an American")
+
+americanobj = American()
+americanobj.printNationality()
+
+#72.Define a class named American and its subclass NewYorker.
+
+#Solution
+
+class American():
+    pass
+
+class NewYorker(American):
+    pass
+
+america = American()
+state = NewYorker()
+
+print(america)
+print(state)
+
+
+#73.Define a class named Circle which can be constructed by a radius. The Circle class has a method which can compute the area.
+
+#Solution
+import math
+
+class Circle():
+    def __init__(self,r):
+        self.radius = r
+
+    def area(self):
+        #Area = pi*r^2
+        return (math.pi*math.pow(self.radius,2))
+
+Area = Circle(2)
+print('Area of a Circle:',Area.area())
+
+
+#74.Define a class named Rectangle which can be constructed by a length and width. The Rectangle class has a method which can compute the area.
+
+#Solution
+
+import math
+import operator
+class Rectangle():
+    def __init__(self,l,w):
+        self.length = l
+        self.width = w
+    def area(self):
+        return operator.imul(self.length,self.width)
+
+AreaofRectangle = Rectangle(3,3)
+print("Area of Rectangle:",AreaofRectangle.area())
+
