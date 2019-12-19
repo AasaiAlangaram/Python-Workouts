@@ -1,4 +1,4 @@
-"""
+
 #1.Write a program to print the following string
 #'Hi
 #   I am your friend
@@ -1425,7 +1425,7 @@ try:
 
 except CustomException as ce:
     print("The error raised: " + ce.message)
-"""
+
 
 #79.Assuming that we have some email addresses in the "username@companyname.com" format,
 # please write program to print the user name of a given email address. Both user names and company names are composed of letters only.
@@ -1438,3 +1438,79 @@ email = "john@google.com"
 pattern = "(\w+)@\w+.com"
 ans = re.findall(pattern,email)
 print(ans)
+
+
+#80.Assuming that we have some email addresses in the "username@companyname.com" format,
+# please write program to print the company name of a given email address. Both user names and company names are composed of letters only.
+
+#Solution
+
+import re
+
+email = "aasai@Company.com"
+pattern = '\w+@(\w+).com'
+output = re.findall(pattern , email)
+
+print(output)
+
+
+#81.Write a program which accepts a sequence of words separated by whitespace as input to print the words composed of digits only
+
+#Solution
+
+import re
+
+word = input('Enter a sequence of words seperated by white space:')
+
+pattern = '\d+'
+output = re.findall(pattern , word)
+
+print(output)
+
+
+#82.Write a program to read an ASCII string and to convert it to a unicode string encoded by utf-8.
+
+#Solution
+
+string = input('Enter a string to convert:')
+
+output = string.encode('utf-8')
+
+print(output)
+
+
+#83.Write a special comment to indicate a Python source code file is in unicode.
+
+#Solution
+
+# -*- coding: utf-8 -*-
+
+
+#84.Write a program to compute 1/2+2/3+3/4+...+n/n+1 with a given n input by console (n>0).
+
+#Solution
+
+no = int(input('Enter no:'))
+
+sum = 0
+
+for i in range(1,no+1):
+
+    sum += i/(i+1)
+
+print('sum=%0.2f'%sum)
+
+
+
+#85.Write a program to compute
+
+# f(n)=f(n-1)+100 when n>0
+# and f(0)=1
+
+def f(n):
+    if n == 0:
+        return 1
+    return f(n-1) + 100
+
+n = int(input())
+print(f(n))
