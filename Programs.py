@@ -1514,7 +1514,7 @@ def f(n):
 
 n = int(input())
 print(f(n))
-"""
+
 #86.Please write a program using generator to print the even numbers between 0 and n in comma separated form while n is input by console.
 
 #Solution
@@ -1531,4 +1531,23 @@ values = []
 for i in generator(no):
     values.append(str(i))
 
+print(",".join(values))
+"""
+
+#87.Please write a program using generator to print the numbers which can be divisible by 5 and 7
+# between 0 and n in comma separated form while n is input by console.
+
+#Solution
+
+def generator(n):
+    i = 0
+    while(i<=n):
+        if i%5 == 0 and i%7==0:
+            yield i
+        i = i+1
+
+no = int(input('Enter an no:'))
+values = []
+for i in generator(no):
+    values.append(str(i))
 print(",".join(values))
