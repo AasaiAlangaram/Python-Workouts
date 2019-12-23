@@ -1520,11 +1520,9 @@ print(f(n))
 #Solution
 
 def generator(n):
-    i = 0
-    while(i<=n):
-        if i%2==0:
+    for i in range(n+1):
+        if i%2 == 0:
             yield i
-        i = i+1
 
 no = int(input('Enter a number:'))
 values = []
@@ -1532,7 +1530,7 @@ for i in generator(no):
     values.append(str(i))
 
 print(",".join(values))
-"""
+
 
 #87.Please write a program using generator to print the numbers which can be divisible by 5 and 7
 # between 0 and n in comma separated form while n is input by console.
@@ -1540,14 +1538,54 @@ print(",".join(values))
 #Solution
 
 def generator(n):
-    i = 0
-    while(i<=n):
-        if i%5 == 0 and i%7==0:
+
+    for i in range(n+1):
+        if i%35==0:
             yield i
-        i = i+1
 
 no = int(input('Enter an no:'))
-values = []
-for i in generator(no):
-    values.append(str(i))
+values = [str(i) for i in generator(no)]
 print(",".join(values))
+
+#88.Please write assert statements to verify that every number in the list [2,4,6,8] is even.
+
+data = [2,4,5,6,10,22,13,24,21,76,43,9]
+for i in data:
+    try:
+        assert i%2 == 0
+    except AssertionError:
+        print('%d is not divisible by 2' % (i))
+    finally:
+        pass
+
+
+#89.Please write a program which accepts basic mathematic expression from console and print the evaluation result.
+
+expression = input("The input is:")
+ans = eval(expression)
+print('The output is :',ans)
+"""
+
+#90.Please write a binary search function which searches an item in a sorted list.
+# The function should return the index of element to be searched in the list.
+
+#Solution
+
+def binary_search_Ascending(array, target):
+    lower = 0
+    upper = len(array)
+    print('Array Length:',upper)
+    while lower < upper:
+        x = (lower + upper) // 2
+        print('Middle Value:',x)
+        val = array[x]
+        if target == val:
+            return x
+        elif target > val:
+            lower = x
+        elif target < val:
+            upper = x
+
+
+Array = [1,5,8,10,12,13,55,66,73,78,82,85,88,99]
+print('The Value Found at Index:',binary_search_Ascending(Array, 82))
