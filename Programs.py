@@ -1,4 +1,4 @@
-
+"""
 #1.Write a program to print the following string
 #'Hi
 #   I am your friend
@@ -1514,3 +1514,21 @@ def f(n):
 
 n = int(input())
 print(f(n))
+"""
+#86.Please write a program using generator to print the even numbers between 0 and n in comma separated form while n is input by console.
+
+#Solution
+
+def generator(n):
+    i = 0
+    while(i<=n):
+        if i%2==0:
+            yield i
+        i = i+1
+
+no = int(input('Enter a number:'))
+values = []
+for i in generator(no):
+    values.append(str(i))
+
+print(",".join(values))
