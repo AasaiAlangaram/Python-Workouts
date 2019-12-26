@@ -1589,7 +1589,7 @@ def binary_search_Ascending(array, target):
 
 Array = [1,5,8,10,12,13,55,66,73,78,82,85,88,99]
 print('The Value Found at Index:',binary_search_Ascending(Array, 8))
-"""
+
 
 #91.The four adjacent digits in the 1000-digit number that have the greatest product are 9 × 9 × 8 × 9 = 5832.
 # Find the thirteen adjacent digits in the 1000-digit number that have the greatest product. What is the value of this product?
@@ -1631,3 +1631,68 @@ indi_end = max(largestproduct(13))[2]
 print('The 13 Adjacent digits are:%s'%(str(number)[indi_start:indi_end]))
 
 
+#92.A Pythagorean triplet is a set of three natural numbers, a < b < c, for which,
+
+# a2 + b2 = c2
+# For example, 32 + 42 = 9 + 16 = 25 = 52.
+
+# There exists exactly one Pythagorean triplet for which a + b + c = 1000.
+# Find the product abc.
+
+#Solution
+
+
+import time
+
+start = time.time()
+
+for num in range(1, 1000):
+    for dig in range(num, 1000):
+        i = 1000 - num - dig
+        # print(i)
+        if num * num + dig * dig == i * i:
+            print(num, dig, i)
+            print("Product: {}".format(num * dig * i))
+
+elapsed = time.time() - start
+print("Time: {:.5f} seconds".format(elapsed))
+"""
+import time
+def getprimes(x):
+    totallist = []
+    for Number in range(1, x):
+        count = 0
+
+        for i in range(2, Number):
+            if(Number % i == 0):
+                count = count + 1
+                break
+
+        if (count == 0 and Number != 1):
+            # print(" %d" %Number, end = '  ')
+            totallist.append(Number)
+    return totallist
+
+# range_input = int(input('Enter range:'))
+start = time.time()
+a=10
+list_of_primeno= getprimes(a)
+end = time.time() - start
+print('The sum of all prime number below %d is %d'%(a,sum(list_of_primeno)))
+print("Time: {:.5f} seconds".format(end))
+
+import time
+def sumPrimes(n):
+    sum, sieve = 0, [True] * n
+    for p in range(2, n):
+        if sieve[p]:
+            sum += p
+            for i in range(p*p, n, p):
+                sieve[i] = False
+    return sum
+start = time.time()
+s = sumPrimes(10)
+print(s)
+#print(li)
+end = time.time()- start
+print('Total time taken:%0.5f'%end)
